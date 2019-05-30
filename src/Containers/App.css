@@ -1,6 +1,181 @@
 .App {
   height: 100%; 
   text-align: center;
-  padding-top: 110px; 
+  font-family: 'Kalam', cursive;
+  background-color: #CD853F; 
 }
 
+/*--------------------nav bar------------------------*/
+.logo {
+  width: 55px; 
+  height: 45px; 
+}
+
+nav {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;  
+  justify-content: space-between; 
+  padding: 0 50px; 
+  background-color: #FFE4C4;
+}
+
+nav p {
+  font-size: 18px; 
+  font-weight: 700; 
+  color: #8B4513;  
+}
+
+/*----------------burger builder--------------------*/
+.burger-builder {
+  background-color: white; 
+  height: 400px; 
+  overflow: scroll; 
+  padding-bottom: 30px; 
+}
+
+.layer {
+  margin: 5px auto 0 auto; 
+}
+
+.top {
+  margin-top: 50px; 
+  width: 400px; 
+  height: 80px; 
+  border-radius: 50% 50% 0 0; 
+  background: linear-gradient(35deg,  #ff7920ce, #ff792096, #ff7920);
+}
+
+.salad {
+  width: 430px; 
+  height: 23px; 
+  border-radius: 10px; 
+  background: linear-gradient(#23bc1e, #97e5a3);
+}
+
+.bacon {
+  width: 400px; 
+  height: 9px; 
+  background-color: rgba(153, 43, 43, 0.85); 
+}
+
+.cheese {
+  width: 450px; 
+  height: 15px; 
+  border-radius: 10px; 
+  background: linear-gradient(#e7da1e, #e2d409);
+}
+
+.meat {
+  width: 400px; 
+  height: 25px; 
+  border-radius: 10px; 
+  background: rgb(94, 41, 41); 
+}
+
+.bottom {
+  width: 400px; 
+  height: 55px; 
+  border-radius: 0 0 35px 35px; 
+  background: linear-gradient(35deg,  #ff7920ce, #ff792096, #ff7920);
+}
+
+/*----------------ingredient selection---------------------*/
+h3 {
+  font-size: 28px; 
+  color: white; 
+}
+
+.price-num {
+  width: 75px; 
+}
+
+.ingredient {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  line-height: 45px; 
+}
+
+i {
+  display: inline-block; 
+  cursor: pointer; 
+  font-size: 36px; 
+  margin: 0;
+}
+
+span {
+  display: inline-block;
+  font-size: 35px; 
+}
+
+.ingredient-name {
+  margin: 0; 
+  width: 150px; 
+  font-size: 20px; 
+  text-align: left; 
+}
+
+.number {
+  width: 40px; 
+}
+/*------------------button section---------------------*/
+.buttons {
+  margin: 40px 0; 
+}
+
+button {
+  cursor: pointer; 
+  font-size: 20px; 
+  border: 2px solid white; 
+  border-radius: 5px; 
+  background-color: #8B4513; 
+  font-size: 18px; 
+  font-family: 'Kalam', cursive;
+  color: white; 
+  padding: 5px 25px; 
+  margin: 0 40px; 
+}
+
+/*-------------------footer----------------------------*/
+footer {
+  background-color: #DEB887; 
+  padding: 45px 0; 
+  font-family: 'Merienda', cursive;
+}
+
+footer p {
+  margin: 5px 0; 
+}
+
+footer p:nth-child(2) {
+  font-weight: 800; 
+}
+
+/*------------------@media-----------------------------*/
+@media(max-width: 550px) {
+  .top {
+    width: 75vw; 
+    border-radius: 50% 50% 0 0; 
+  }
+  
+  .salad {
+    width: 80vw; 
+  }
+  
+  .bacon {
+    width: 75vw; 
+  }
+  
+  .cheese {
+    width: 85vw; 
+  }
+  
+  .meat {
+    width: 75vw; 
+  }
+  
+  .bottom {
+    width: 75vw; 
+  }
+}
