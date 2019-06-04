@@ -133,7 +133,11 @@ class App extends Component {
           <p>Welcome to Order Burger Online!</p>
         </nav>
         <div className='burger-builder'> 
-          <div className='layer top'></div>
+          <div className='layer top'>
+            <div className='seed1'></div>
+            <div className='seed2'></div>
+            <div className='seed3'></div>
+          </div>
           {divLayers}
           <div className='layer bottom'></div>
         </div>
