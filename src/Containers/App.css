@@ -221,4 +221,8 @@ footer p:nth-child(2) {
   .bottom {
     width: 75vw; 
   }
+
+  button {
+    margin: 2px 15px; 
+  }
 }
