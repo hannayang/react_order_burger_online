@@ -168,7 +168,7 @@ class App extends Component {
         </div>
         <footer>
           <p>Designed and coded by</p>
-          <p>Hanna Yang</p>
+          <p><a href="https://hannayang.github.io/my_resume/" target="_blank">Hanna Yang</a></p>
         </footer>
       </div>
     );
