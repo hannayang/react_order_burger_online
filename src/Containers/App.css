@@ -54,7 +54,7 @@ nav p {
 
 }
 
-.seed1 {
+.seed {
   width: 20px; 
   height: 40px;
   position: absolute; 
@@ -66,28 +66,30 @@ nav p {
   box-shadow: inset -2px -3px #c9c9c9; 
 }
 
-.seed2 {
+.seed::after {
+  content: " ";
   width: 20px; 
   height: 40px;
   position: absolute; 
   background-color: white;
-  left: 47%;
-  top: 20%;
+  left: 500%;
+  top: 60%;
   border-radius: 40%;
-  transform: rotate(30deg);
-  box-shadow: inset -3px 0 #c9c9c9; 
+  transform: rotate(60deg);
+  box-shadow: inset -2px -3px 0 #c9c9c9; 
 }
 
-.seed3 {
+.seed::before{
+  content: ""; 
   width: 20px; 
   height: 40px;
   position: absolute; 
   background-color: white;
-  left: 79%;
-  top: 40%;
+  left: 980%;
+  top: 180%;
   border-radius: 40%;
-  transform: rotate(-70deg);
-  box-shadow: inset -3px 0 #c9c9c9; 
+  transform: rotate(-50deg);
+  box-shadow: inset -2px -3px 0 #c9c9c9; 
 }
 
 .salad {
@@ -122,6 +124,7 @@ nav p {
   height: 55px; 
   border-radius: 0 0 35px 35px; 
   background: linear-gradient(35deg,  #ff7920ce, #ff792096, #ff7920);
+  box-shadow: inset -15px 0 #c14822;
 }
 
 /*----------------ingredient selection---------------------*/

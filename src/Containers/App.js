@@ -6,7 +6,7 @@ const priceList = {
   bacon: 1.50, 
   cheese: 1.40, 
   meat: 1.60, 
-  bread: 2.0, 
+  bread: 2.00, 
 }
   
 class App extends Component {
@@ -118,7 +118,7 @@ class App extends Component {
     }
     return { 
       layers: layers, 
-      currentPrice: (2.0 + state.saladNum * priceList.salad + state.baconNum * priceList.bacon + state.cheeseNum * priceList.cheese + state.meatNum * priceList.meat).toFixed(2)
+      currentPrice: (2.00 + state.saladNum * priceList.salad + state.baconNum * priceList.bacon + state.cheeseNum * priceList.cheese + state.meatNum * priceList.meat).toFixed(2)
     }
   }; 
 
@@ -134,9 +134,7 @@ class App extends Component {
         </nav>
         <div className='burger-builder'> 
           <div className='layer top'>
-            <div className='seed1'></div>
-            <div className='seed2'></div>
-            <div className='seed3'></div>
+            <div className='seed'></div>
           </div>
           {divLayers}
           <div className='layer bottom'></div>
