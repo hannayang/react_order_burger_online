@@ -74,7 +74,7 @@ class App extends Component {
       return (
         <div className='ingredient'>
           <p className='ingredient-name'>{ingredient.name}</p>
-          <i onClick={()=>this.decreaseHandler(ingredient.id)} className="far fa-minus-square"></i> <span className='numberOfOrder'>{ingredient.num}</span> <i onClick={()=>this.increaseHandler(ingredient.id)} className="far fa-plus-square"></i>
+          <i onClick={()=>this.decreaseHandler(ingredient.id)} className="far fa-minus-square"></i> <span className='number-of-order'>{ingredient.num}</span> <i onClick={()=>this.increaseHandler(ingredient.id)} className="far fa-plus-square"></i>
         </div>
       )
     }
