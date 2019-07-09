@@ -8,168 +8,177 @@
 }
 
 /*--------------------nav bar------------------------*/
-.logo {
-  width: 55px; 
-  height: 40px; 
-  margin-left: 30px; 
-}
-
 nav {
   width: 100%; 
-  height: 50px; 
+  height: 3.3em; 
   display: flex; 
-  flex-direction: row; 
-  align-items: center;  
   justify-content: space-between; 
+  align-items: center;  
   background-color: #FFE4C4;
 }
 
+.logo {
+  width: 5%; 
+  min-width: 3em; 
+  max-width: 65px; 
+  margin-left: 3.5%; 
+}
+
 nav p {
-  font-size: 18px; 
+  font-size: 1.1em; 
   font-weight: 700; 
   color: #8B4513;  
-  margin-right: 60px; 
+  margin-right: 4.5%; 
 }
 
 /*----------------burger builder--------------------*/
 .burger-builder {
   background-color: white; 
-  height: 330px; 
+  height: 21em; 
   overflow: scroll;  
-  padding-bottom: 20px; 
+  padding-bottom: 1.2em; 
 }
 
 .layer {
-  margin: 4px auto 0 auto; 
+  margin: 0.25em auto 0 auto; 
 }
 
 .top {
-  margin-top: 30px; 
-  width: 400px; 
-  height: 80px; 
+  margin-top: 1.8em; 
+  width: 35%;  
+  max-width: 27em; 
+  min-width: 21em; 
+  height: 5em; 
   border-radius: 50% 50% 0 0; 
-  box-shadow: inset -15px 0 #c14822;
+  box-shadow: inset -1em 0 #c14822;
   background: linear-gradient(35deg,  #ff7920ce, #ff792096, #ff7920);
   position: relative; 
-
 }
 
 .seed {
-  width: 20px; 
-  height: 40px;
+  width: 5%; 
+  height: 2.5em;
   position: absolute; 
   background-color: white;
   left: 20%;
   top: 30%;
   border-radius: 40%;
   transform: rotate(-20deg);
-  box-shadow: inset -2px -3px #c9c9c9; 
+  box-shadow: inset -0.1em -0.2em #c9c9c9; 
 }
 
 .seed::after {
-  content: " ";
-  width: 20px; 
-  height: 40px;
+  content: "";
+  width: 100%; 
+  height: 2.5em;
   position: absolute; 
   background-color: white;
   left: 500%;
   top: 60%;
   border-radius: 40%;
   transform: rotate(60deg);
-  box-shadow: inset -2px -3px 0 #c9c9c9; 
+  box-shadow: inset -0.1em -0.2em #c9c9c9; 
 }
 
 .seed::before{
   content: ""; 
-  width: 20px; 
-  height: 40px;
+  width: 100%; 
+  height: 2.5em;
   position: absolute; 
   background-color: white;
   left: 980%;
   top: 180%;
   border-radius: 40%;
   transform: rotate(-50deg);
-  box-shadow: inset -2px -3px 0 #c9c9c9; 
+  box-shadow: inset -0.1em -0.2em #c9c9c9; 
 }
 
 .salad {
-  width: 430px; 
-  height: 23px; 
-  border-radius: 10px; 
+  width: 37%; 
+  max-width: 29em; 
+  min-width: 23em; 
+  height: 1.4em; 
+  border-radius: 1.4em; 
   background: linear-gradient(#23bc1e, #97e5a3);
 }
 
 .bacon {
-  width: 400px; 
-  height: 9px; 
+  width: 35%; 
+  max-width: 27em; 
+  min-width: 21em; 
+  height: 0.6em; 
   background-color: rgba(153, 43, 43, 0.85); 
 }
 
 .cheese {
-  width: 450px; 
-  height: 15px; 
-  border-radius: 10px; 
+  width: 38%; 
+  max-width: 30em; 
+  min-width: 24em; 
+  height: 1em; 
+  border-radius: 0.6em; 
   background: linear-gradient(#e7da1e, #e2d409);
 }
 
 .meat {
-  width: 400px; 
-  height: 25px; 
-  border-radius: 10px; 
+  width: 35%; 
+  max-width: 27em; 
+  min-width: 21em; 
+  height: 1.6em; 
+  border-radius: 0.5em; 
   background: rgb(94, 41, 41); 
 }
 
 .bottom {
-  width: 400px; 
-  height: 55px; 
-  border-radius: 0 0 35px 35px; 
+  width: 35%; 
+  max-width: 27em; 
+  min-width: 21em; 
+  height: 3.4em; 
+  border-radius: 0 0 2em 2em; 
   background: linear-gradient(35deg,  #ff7920ce, #ff792096, #ff7920);
-  box-shadow: inset -15px 0 #c14822;
+  box-shadow: inset -1em 0 #c14822;
 }
 
 /*----------------ingredient selection---------------------*/
-h3 {
-  font-size: 27px; 
-  margin: 10px; 
+.current-price {
+  font-size: 1.7em; 
+  margin: 0.6em; 
   color: white; 
 }
 
-.price-num {
-  width: 75px; 
+.total-price-num {
+  font-size: 1.3em; 
+  font-weight: 600;
 }
 
 .ingredient {
   display: flex; 
-  flex-direction: row; 
   justify-content: center; 
-  line-height: 43px; 
+  line-height: 2.8em; 
 }
 
 i {
   display: inline-block; 
   cursor: pointer; 
-  font-size: 36px; 
+  font-size: 2.3em; 
   margin: 0;
-}
-
-span {
-  display: inline-block;
-  font-size: 35px; 
 }
 
 .ingredient-name {
   margin: 0; 
-  width: 150px; 
-  font-size: 20px; 
+  width: 15%; 
+  max-width: 12em; 
+  min-width: 5em; 
+  font-size: 1.25em; 
   text-align: left; 
 }
 
-.number {
-  width: 40px; 
+.numberOfOrder {
+  font-size: 1.7em; 
+  width: 2em; 
 }
 /*------------------button section---------------------*/
 .buttons {
-  margin: 20px 0 40px 0; 
+  margin: 1.3em 0 2.5em 0; 
 }
 
 button {
@@ -177,17 +186,17 @@ button {
   border: 2px solid white; 
   border-radius: 5px; 
   background-color: #8B4513; 
-  font-size: 18px; 
+  font-size: 1.1em; 
   font-family: 'Kalam', cursive;
   color: white; 
-  padding: 5px 25px; 
-  margin: 0 40px; 
+  padding: 0.3em 1.6em; 
+  margin: 0 2.5em; 
 }
 
 /*-------------------footer----------------------------*/
 footer {
   background-color: #DEB887; 
-  padding: 45px 0; 
+  padding: 2.8em 0; 
   font-family: 'Merienda', cursive;
 }
 
@@ -250,7 +259,7 @@ footer a:hover {
   .top {
     margin-top: 80px; 
   }
-  h3 {
+  .current-price {
     margin: 60px auto 40px auto; 
   }
   .buttons {
@@ -268,15 +277,7 @@ footer a:hover {
 }
 
 @media(min-width: 1679px) {
-  .logo {
-    width: 65px; 
-    height: 50px; 
-    margin-left: 50px; 
-  }
-  nav p {
-    font-size: 28px; 
-  }
-  h3 {
+  .current-price {
     font-size: 40px; 
   }
   .price-num {

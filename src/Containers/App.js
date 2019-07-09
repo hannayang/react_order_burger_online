@@ -1,127 +1,105 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const priceList = {
-  salad: 1.20, 
-  bacon: 1.50, 
-  cheese: 1.40, 
-  meat: 1.60, 
-  bread: 2.00, 
-}
+const ingredients = [{
+  id: '01', 
+  name: 'Salad', 
+  unitPrice: 1.20, 
+  num: 0, 
+}, {
+  id: '02', 
+  name: 'Bacon', 
+  unitPrice: 1.50, 
+  num: 0, 
+}, {
+  id: '03', 
+  name: 'Cheese', 
+  unitPrice: 1.40, 
+  num: 0, 
+}, {
+  id: '04', 
+  name: 'Meat', 
+  unitPrice: 1.60, 
+  num: 0, 
+}, 
+]; 
   
 class App extends Component {
   constructor(props) {
     super(props); 
     this.state = {
-      saladNum: 0, 
-      baconNum: 0, 
-      cheeseNum: 0, 
-      meatNum: 0, 
-    }; 
-    this.saladDecreaseHandler = this.saladDecreaseHandler.bind(this); 
-    this.saladIncreaseHandler = this.saladIncreaseHandler.bind(this); 
-    this.baconDecreaseHandler = this.baconDecreaseHandler.bind(this); 
-    this.baconIncreaseHandler = this.baconIncreaseHandler.bind(this); 
-    this.cheeseDecreaseHandler = this.cheeseDecreaseHandler.bind(this); 
-    this.cheeseIncreaseHandler = this.cheeseIncreaseHandler.bind(this); 
-    this.meatDecreaseHandler = this.meatDecreaseHandler.bind(this);
-    this.meatIncreaseHandler = this.meatIncreaseHandler.bind(this);
+      ingredients: ingredients, 
+    };
+    this.decreaseHandler = this.decreaseHandler.bind(this); 
+    this.increaseHandler = this.increaseHandler.bind(this); 
     this.resetHandler = this.resetHandler.bind(this); 
-  }; 
+  }
 
-  saladDecreaseHandler() {
-    if(this.state.saladNum > 0) {
-      this.setState({
-        saladNum: this.state.saladNum - 1, 
-      })
+  decreaseHandler(id) {
+    const ingredient = this.state.ingredients.find(i => {
+      return i.id === id; 
+    }); 
+    if(ingredient.num > 0) {
+      ingredient.num = ingredient.num - 1; 
     }
-  }; 
-
-  saladIncreaseHandler() {
-    if(this.state.saladNum < 3) {
-      this.setState({
-        saladNum: this.state.saladNum + 1, 
-      })
-    }
-  }; 
-
-  baconDecreaseHandler() {
-    if(this.state.baconNum > 0) {
-      this.setState({
-        baconNum: this.state.baconNum - 1, 
-      })
-    }
-  }; 
-
-  baconIncreaseHandler() {
-    if(this.state.baconNum < 3) {
-      this.setState({
-        baconNum: this.state.baconNum + 1, 
-      })
-    }
-  }; 
-
-  cheeseDecreaseHandler() {
-    if(this.state.cheeseNum > 0) {
-      this.setState({
-        cheeseNum: this.state.cheeseNum - 1, 
-      })
-    }
-  }; 
-
-  cheeseIncreaseHandler() {
-    if(this.state.cheeseNum < 3) {
-      this.setState({
-        cheeseNum: this.state.cheeseNum + 1, 
-      })
-    }
-  }; 
-
-  meatDecreaseHandler() {
-    if(this.state.meatNum > 0) {
-      this.setState({
-        meatNum: this.state.meatNum - 1, 
-      })
-    }
-  }; 
-
-  meatIncreaseHandler() {
-    if(this.state.meatNum < 3) {
-      this.setState({
-        meatNum: this.state.meatNum + 1, 
-      })
-    }
-  }; 
-
-  resetHandler() {
     this.setState({
-      saladNum: 0, 
-      baconNum: 0, 
-      cheeseNum: 0, 
-      meatNum: 0, 
+      ingredients: this.state.ingredients, 
     })
   }; 
 
+  increaseHandler(id) {
+    const ingredient = this.state.ingredients.find(i => {
+      return i.id === id; 
+    }); 
+    if(ingredient.num < 3) {
+      ingredient.num = ingredient.num + 1; 
+    }
+    this.setState({
+      ingredients: this.state.ingredients, 
+    })
+  }
+
+  resetHandler() {
+    this.state.ingredients[0].num = 0; 
+    this.state.ingredients[1].num = 0; 
+    this.state.ingredients[2].num = 0; 
+    this.state.ingredients[3].num = 0; 
+    this.setState({
+      ingredients: this.state.ingredients, 
+    });
+  }
+
+  renderIngredients(ingredients) {
+    return ingredients.map((ingredient) => {
+      return (
+        <div className='ingredient'>
+          <p className='ingredient-name'>{ingredient.name}</p>
+          <i onClick={()=>this.decreaseHandler(ingredient.id)} className="far fa-minus-square"></i> <span className='numberOfOrder'>{ingredient.num}</span> <i onClick={()=>this.increaseHandler(ingredient.id)} className="far fa-plus-square"></i>
+        </div>
+      )
+    }
+    )
+  }
+
   getExtendedState(state) { 
     let layers = [];
-    for(let i = 0; i < state.saladNum; i++) {
+    for(let i = 0; i < state.ingredients[0].num; i++) {
       layers.push('salad')
     }
-    for(let i = 0; i < state.baconNum; i++) {
+    for(let i = 0; i < state.ingredients[1].num; i++) {
       layers.push('bacon')
     } 
-    for(let i = 0; i < state.cheeseNum; i++) {
+    for(let i = 0; i < state.ingredients[2].num; i++) {
       layers.push('cheese')
     } 
-    for(let i = 0; i < state.meatNum; i++) {
+    for(let i = 0; i < state.ingredients[3].num; i++) {
       layers.push('meat')
     }
     return { 
       layers: layers, 
-      currentPrice: (2.00 + state.saladNum * priceList.salad + state.baconNum * priceList.bacon + state.cheeseNum * priceList.cheese + state.meatNum * priceList.meat).toFixed(2)
-    }
-  }; 
-
+      currentPrice: (2.00 + state.ingredients[0].num * state.ingredients[0].unitPrice + state.ingredients[1].num * state.ingredients[1].unitPrice + state.ingredients[2].num * state.ingredients[2].unitPrice + state.ingredients[3].num * state.ingredients[3].unitPrice).toFixed(2)
+    };
+  }
 
   render () {
     const extendedState = this.getExtendedState(this.state);
@@ -129,36 +107,21 @@ class App extends Component {
     return (
       <div className="App">
         <nav>
-          <img className='logo' src='http://clipart-library.com/image_gallery/149336.png' alt='Burger Logo' /> 
+          <img className='logo' src='http://clipart-library.com/image_gallery/149336.png' alt='Logo' /> 
           <p>Welcome to Order Burger Online!</p>
         </nav>
         <div className='burger-builder'> 
           <div className='layer top'>
             <div className='seed'></div>
           </div>
-          {divLayers}
+            {divLayers}
           <div className='layer bottom'></div>
         </div>
         <div className='current-price'>
-          <h3 id='current-price'> Current Price:&nbsp; <span className='price-num'>${extendedState.currentPrice}</span></h3>
+          <div id='current-price'> Current Price:&nbsp; <span className='total-price-num'>${extendedState.currentPrice}</span></div>
         </div>
         <div className='ingredient-control'>
-          <div className='ingredient'>
-            <p className='ingredient-name'>Salad </p> 
-            <i onClick={this.saladDecreaseHandler} className="far fa-minus-square"></i> <span className='number'>{this.state.saladNum}</span> <i onClick={this.saladIncreaseHandler} className="far fa-plus-square"></i>
-          </div>
-          <div className='ingredient'>
-            <p className='ingredient-name'>Bacon </p> 
-            <i onClick={this.baconDecreaseHandler} className="far fa-minus-square"></i> <span className='number'>{this.state.baconNum}</span> <i onClick={this.baconIncreaseHandler} className="far fa-plus-square"></i>
-          </div>
-          <div className='ingredient'>
-            <p className='ingredient-name'>Cheese </p> 
-            <i onClick={this.cheeseDecreaseHandler} className="far fa-minus-square"></i> <span className='number'> {this.state.cheeseNum}</span> <i onClick={this.cheeseIncreaseHandler} className="far fa-plus-square"></i>
-          </div>
-          <div className='ingredient'>
-            <p className='ingredient-name'>Meat </p> 
-            <i onClick={this.meatDecreaseHandler} className="far fa-minus-square"></i> <span className='number'> {this.state.meatNum}</span> <i onClick={this.meatIncreaseHandler} className="far fa-plus-square"></i>
-          </div>
+          {this.renderIngredients(this.state.ingredients)}
         </div>
         <div className='buttons'>
           <button onClick={this.resetHandler}> Redo </button>
@@ -166,7 +129,7 @@ class App extends Component {
         </div>
         <footer>
           <p>Designed and coded by</p>
-          <p><a href="https://hannayang.github.io/my_resume/" target="_blank">Hanna Yang</a></p>
+          <p><a href="https://hannayang.github.io/my_resume/" target="_blank" rel="noopener noreferrer">Hanna Yang</a></p>
         </footer>
       </div>
     );
