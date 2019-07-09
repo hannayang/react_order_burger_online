@@ -47,7 +47,7 @@ nav p {
   margin-top: 1.8em; 
   width: 35%;  
   max-width: 27em; 
-  min-width: 21em; 
+  min-width: 18em; 
   height: 5em; 
   border-radius: 50% 50% 0 0; 
   box-shadow: inset -1em 0 #c14822;
@@ -96,7 +96,7 @@ nav p {
 .salad {
   width: 37%; 
   max-width: 29em; 
-  min-width: 23em; 
+  min-width: 20em; 
   height: 1.4em; 
   border-radius: 1.4em; 
   background: linear-gradient(#23bc1e, #97e5a3);
@@ -105,7 +105,7 @@ nav p {
 .bacon {
   width: 35%; 
   max-width: 27em; 
-  min-width: 21em; 
+  min-width: 18em; 
   height: 0.6em; 
   background-color: rgba(153, 43, 43, 0.85); 
 }
@@ -113,7 +113,7 @@ nav p {
 .cheese {
   width: 38%; 
   max-width: 30em; 
-  min-width: 24em; 
+  min-width: 21em; 
   height: 1em; 
   border-radius: 0.6em; 
   background: linear-gradient(#e7da1e, #e2d409);
@@ -122,7 +122,7 @@ nav p {
 .meat {
   width: 35%; 
   max-width: 27em; 
-  min-width: 21em; 
+  min-width: 18em; 
   height: 1.6em; 
   border-radius: 0.5em; 
   background: rgb(94, 41, 41); 
@@ -131,7 +131,7 @@ nav p {
 .bottom {
   width: 35%; 
   max-width: 27em; 
-  min-width: 21em; 
+  min-width: 18em; 
   height: 3.4em; 
   border-radius: 0 0 2em 2em; 
   background: linear-gradient(35deg,  #ff7920ce, #ff792096, #ff7920);
@@ -220,12 +220,28 @@ footer a:hover {
 /*------------------@media-----------------------------*/
 @media(min-height: 880px) {
   html {
-    font-size: 18px; 
+    font-size: 19px; 
   }
 }
 
 @media(min-height: 1150px) {
   html {
-    font-size: 20px; 
+    font-size: 23px; 
+  }
+
+  nav {
+    height: 5em; 
+  }
+
+  .burger-builder { 
+    padding: 2em 0; 
+  }
+
+  .current-price {
+    margin: 1.2em;
+  }
+
+  footer {
+    padding: 6em 0; 
   }
 }
