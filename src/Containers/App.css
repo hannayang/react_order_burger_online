@@ -201,7 +201,7 @@ footer {
 }
 
 footer p {
-  margin: 5px 0; 
+  margin: 0.3em 0; 
 }
 
 footer p:nth-child(2) {
@@ -218,88 +218,14 @@ footer a:hover {
 }
 
 /*------------------@media-----------------------------*/
-@media(max-width: 550px) {
-  .top {
-    width: 75vw; 
-    border-radius: 50% 50% 0 0; 
-  }
-  
-  .salad {
-    width: 80vw; 
-  }
-  
-  .bacon {
-    width: 75vw; 
-  }
-  
-  .cheese {
-    width: 85vw; 
-  }
-  
-  .meat {
-    width: 75vw; 
-  }
-  
-  .bottom {
-    width: 75vw; 
-  }
-
-  button {
-    margin: 2px 15px; 
-  }
-}
-
 @media(min-height: 880px) {
-  nav {
-    height: 80px; 
-  }
-  .burger-builder {
-    height: 500px; 
-  }
-  .top {
-    margin-top: 80px; 
-  }
-  .current-price {
-    margin: 60px auto 40px auto; 
-  }
-  .buttons {
-    margin: 40px 0 60px 0; 
+  html {
+    font-size: 18px; 
   }
 }
 
 @media(min-height: 1150px) {
-  .burger-builder {
-    height: 600px; 
-  }
-  footer {
-    padding: 105px 0; 
-  }
-}
-
-@media(min-width: 1679px) {
-  .current-price {
-    font-size: 40px; 
-  }
-  .price-num {
-    font-size: 45px; 
-  }
-  .ingredient-name {
-    width: 250px; 
-    font-size: 40px; 
-    padding: 10px 0 10px 0; 
-  }
-  .number {
-    width: 80px; 
-    font-size: 44px; 
-    padding: 10px 0 10px 0; 
-  }
-  i {
-    font-size: 52px; 
-  }
-  button {
-    font-size: 28px; 
-  }
-  footer {
-    font-size: 25px; 
+  html {
+    font-size: 20px; 
   }
 }
